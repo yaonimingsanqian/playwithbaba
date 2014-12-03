@@ -1,0 +1,43 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="papa.play.ksd.baba.RegisterSuccess">
+
+    <EditText
+        android:layout_width="0dip"
+        android:layout_height="0dip" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="50dip"
+        android:hint="设置昵称"
+        android:layout_marginTop="20dip"
+        android:layout_marginLeft="10dip"
+        android:textSize="20dip"
+        android:enabled="false"/>
+
+    <EditText
+        android:layout_width="220dip"
+        android:layout_height="50dip"
+        android:layout_marginLeft="105dip"
+        android:layout_marginTop="20dip"
+        android:textSize="20dip"
+        />
+
+    <Button
+        android:layout_width="315dip"
+        android:layout_height="50dip"
+        android:layout_marginTop="100dip"
+        android:layout_marginLeft="10dip"
+        android:textColor="@color/white"
+        android:text="完成"
+        android:textSize="20dip"
+        android:id="@+id/setnickname"
+        android:background="@color/tabDark"
+        />
+
+</RelativeLayout>

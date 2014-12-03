@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, TabSample!</string>
+    <string name="app_name">爸爸一起玩</string>
+    <string name="albumPress">papa.play.ksd.baba.album</string>
+    <string name="camerPress">papa.play.ksd.baba.camer</string>
+
+    <string-array name="Spinner_Content">
+        <item>One</item>
+        <item>Two</item>
+        <item>Three</item>
+    </string-array>
+
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_register_success">RegisterSuccess</string>
+    <string name="title_activity_test_carema">testCarema</string>
+    <string name="title_activity_carema">CaremaActivity</string>
+    <string name="leibie">类别</string>
+    <string name="title_activity_photo_wall">PhotoWallActivity</string>
+    <string name="title_activity_my_device_photo">MyDevicePhotoActivity</string>
+
+</resources>

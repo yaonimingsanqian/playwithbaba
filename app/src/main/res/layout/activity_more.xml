@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_centerInParent="true">
+
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="100dip"
+    android:gravity="center">
+
+    <Button
+        android:layout_width="120dip"
+        android:layout_height="40dip"
+        android:layout_marginTop="20dip"
+        android:background="@color/red"
+        android:textSize="20dip"
+        android:text="注册"
+        android:textColor="@color/white"
+        android:id="@+id/register"/>
+
+    <Button
+        android:layout_width="120dip"
+        android:layout_height="40dip"
+        android:layout_marginTop="20dip"
+        android:background="@color/tabDark"
+        android:textSize="20dip"
+        android:text="登陆"
+        android:layout_marginLeft="10dip"
+        android:textColor="@color/white"/>
+    </LinearLayout>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dip"
+        android:layout_marginTop="140dip"
+        android:background="@color/seperate"></View>
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="160dip">
+        <ImageButton
+            android:layout_width="30dip"
+            android:layout_height="30dip"
+            android:background="@drawable/myshare"
+            android:layout_marginLeft="20dip"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dip"
+            android:text="我的分享"
+            android:textSize="20dip"
+            android:background="@color/white"/>
+        </RelativeLayout>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dip"
+        android:layout_marginTop="210dip"
+        android:background="@color/seperate"></View>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="230dip">
+        <ImageButton
+            android:layout_width="30dip"
+            android:layout_height="30dip"
+            android:background="@drawable/about"
+            android:layout_marginLeft="20dip"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dip"
+            android:text="关于“爸爸一起玩”"
+            android:textSize="20dip"
+            android:background="@color/white"/>
+    </RelativeLayout>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dip"
+        android:layout_marginTop="280dip"
+        android:background="@color/seperate"></View>
+</RelativeLayout>

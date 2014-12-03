@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:clickable="true"
+    android:orientation="vertical"
+    android:padding="20.0dip" >
+
+    <LinearLayout
+        android:id="@+id/parent"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:background="@drawable/corners_bg"
+        >
+
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="50dip"
+                android:layout_centerHorizontal="true"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="温馨提示"
+                    android:textSize="20dip"
+                    android:id="@+id/title"
+                    android:textColor="@color/tabDark"
+                    android:layout_marginLeft="20dip"
+                    android:layout_marginTop="10dip"/>
+            </RelativeLayout>
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dip"
+            android:background="@color/tabDark"
+            ></View>
+
+            <TextView
+                android:id="@+id/message"
+                style="@style/textviewtext"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:lineSpacingMultiplier="1.5"
+                android:minHeight="40.0dip"
+                android:paddingBottom="15.0dip"
+                android:paddingLeft="20.0dip"
+                android:paddingRight="20.0dip"
+                android:paddingTop="20.0dip"
+                android:text="请先登陆或者注册"
+                android:textSize="20dip"
+                />
+
+<View
+    android:layout_width="wrap_content"
+    android:layout_height="1dip"
+    android:background="#E3E3E3">
+
+    </View>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="50.0dip"
+                android:layout_gravity="bottom"
+                android:gravity="center"
+                android:orientation="horizontal"
+                >
+
+                <Button
+                    android:id="@+id/negativeButton"
+                    android:layout_width="120.0dip"
+                    android:layout_height="35dip"
+                    android:layout_marginLeft="0dip"
+                    android:textSize="20dip"
+                    android:text="微信邀请"
+                    android:textColor="#000000"
+                    android:background="#ffffff"/>
+                <View
+                    android:layout_width="1dip"
+                    android:layout_height="80dip"
+                    android:background="#E3E3E3" >
+                    </View>
+
+                <Button
+                    android:id="@+id/positiveButton"
+                    android:layout_width="120.0dip"
+                    android:layout_height="35dip"
+                    android:layout_marginRight="0dip"
+                    android:text="短信邀请"
+                    android:textSize="20dip"
+                    android:layout_marginLeft="10dip"
+                    android:textColor="#000000"
+                    android:background="#ffffff"/>
+
+                <!--<Button-->
+                    <!--android:id="@+id/positiveButton"-->
+                    <!--style="@style/text_15_ffffff_sdw"-->
+                    <!--android:layout_width="120.0dip"-->
+                    <!--android:layout_height="40.0dip"-->
+                    <!--android:layout_marginLeft="0dip"-->
+                    <!--android:text="ok"-->
+                    <!--android:background="@drawable/buttonnormal"/>-->
+
+                <!--<Button-->
+                    <!--android:id="@+id/negativeButton"-->
+                    <!--style="@style/text_15_666666_sdw"-->
+                    <!--android:layout_width="120.0dip"-->
+                    <!--android:layout_height="40.0dip"-->
+                    <!--android:layout_marginRight="0dip"-->
+                    <!--android:text="填写邀请码"-->
+                    <!--android:background="@drawable/buttonnormal"/>-->
+            </LinearLayout>
+        
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="5dip" />
+            </RelativeLayout>
+
+
+    </LinearLayout>
+
+</FrameLayout> 

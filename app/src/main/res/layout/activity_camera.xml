@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent"
+    android:orientation="vertical"
+    android:id="@+id/publishlayout">
+    <ImageView
+        android:layout_width="300dip"
+        android:layout_height="300dip"
+        android:id="@+id/imageView"
+        android:layout_marginTop="20dip"
+        android:layout_centerHorizontal="true"
+        />
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tmp"
+        android:layout_below="@+id/imageView">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="20dip" />
+
+        </RelativeLayout>
+    <Button
+        android:layout_width="80dip"
+        android:layout_height="50dip"
+        android:layout_alignLeft="@+id/imageView"
+        android:layout_below="@id/tmp"
+        android:id="@+id/spinner"
+        android:text="类别"
+        >
+
+    </Button>
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spinner"
+        android:id="@+id/tmp1">
+
+        </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tmp1"
+        android:id="@+id/tmp2">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="20dip" />
+        </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tmp2"
+        android:id="@+id/tmp3"
+        android:gravity="center">
+        <EditText
+            android:layout_width="0dip"
+            android:layout_height="0dip" />
+        <EditText
+            android:layout_width="300dip"
+            android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="470dip"
+        android:gravity="center">
+        <Button
+            android:layout_width="300dip"
+            android:layout_height="40dip"
+            android:background="@color/tabDark"
+            android:text="完成"
+            android:textColor="@color/white"
+            android:textSize="20dip"/>
+        </RelativeLayout>
+
+</RelativeLayout>

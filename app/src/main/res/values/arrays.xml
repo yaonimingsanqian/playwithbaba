@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+     <resources>
+
+
+         <array name="items">
+             <item>12月底</item>
+             <item>元旦一过</item>
+             <item>1月13号</item>
+         </array>
+
+     </resources>
