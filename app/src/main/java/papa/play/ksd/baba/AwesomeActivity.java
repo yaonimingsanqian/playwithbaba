@@ -1,34 +1,24 @@
 package papa.play.ksd.baba;
 
-import java.io.ByteArrayOutputStream;
+import android.app.TabActivity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.view.Menu;
-import android.view.MenuItem;
-
-import java.text.SimpleDateFormat;
-import android.app.TabActivity;
-import android.content.Intent;
-import android.graphics.Color;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TabHost;
-import android.widget.TabWidget;
 import android.widget.TextView;
-import android.os.Environment;
+
+import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Date;
 @SuppressWarnings("deprecation")
 public class AwesomeActivity extends TabActivity {
     TabHost tabHost;
@@ -82,13 +72,7 @@ public class AwesomeActivity extends TabActivity {
             public void onReceive(Context context, Intent intent1) {
                 isShow = false;
                 dialogLoading.dismiss();
-                Intent getImage = new Intent(Intent.ACTION_GET_CONTENT);
-
-                getImage.addCategory(Intent.CATEGORY_OPENABLE);
-
-                getImage.setType("image/jpeg");
-
-                startActivityForResult(getImage, 0);
+                startActivity(new Intent(AwesomeActivity.this,PhotoActivity.class));
             }
         };
        // FILE_PATH = getFilesDir().getAbsolutePath()+"syscamera.jpg";

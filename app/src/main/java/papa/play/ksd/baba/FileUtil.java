@@ -3,11 +3,11 @@ package papa.play.ksd.baba;
 /**
  * Created by test2 on 14/12/3.
  */
-import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
-
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
 
 /**
  * 文件操作类

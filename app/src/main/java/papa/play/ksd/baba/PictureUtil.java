@@ -3,9 +3,6 @@ package papa.play.ksd.baba;
 /**
  * Created by test2 on 14/12/3.
  */
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -13,6 +10,9 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Environment;
 import android.util.Base64;
+
+import java.io.ByteArrayOutputStream;
+import java.io.File;
 
 public class PictureUtil {
 
@@ -75,6 +75,19 @@ public class PictureUtil {
 
         // Calculate inSampleSize
         options.inSampleSize = calculateInSampleSize(options, 480, 800);
+
+        // Decode bitmap with inSampleSize set
+        options.inJustDecodeBounds = false;
+
+        return BitmapFactory.decodeFile(filePath, options);
+    }
+    public static Bitmap getSmallBitmap(String filePath,int width,int height) {
+        final BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeFile(filePath, options);
+
+        // Calculate inSampleSize
+        options.inSampleSize = calculateInSampleSize(options, width, height);
 
         // Decode bitmap with inSampleSize set
         options.inJustDecodeBounds = false;

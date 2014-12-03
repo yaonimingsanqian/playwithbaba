@@ -1,29 +1,28 @@
 package papa.play.ksd.baba;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
-import android.graphics.Matrix;
+import android.provider.MediaStore;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.provider.MediaStore;
-
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import android.net.Uri;
-import android.graphics.BitmapFactory;
-import android.util.DisplayMetrics;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.widget.RelativeLayout;
+
+import java.io.File;
 
 public class CameraActivity extends Activity {
 
     private ImageView imageView;
     private Button button;
+
     private static  String FILE_PATH ="/sdcard/ilock/syscamera.jpg";
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,6 +70,7 @@ public class CameraActivity extends Activity {
             }
         });
 
+
     }
 
     void showDialog(){
@@ -112,7 +112,7 @@ public class CameraActivity extends Activity {
 
         }
         imageView.setImageBitmap(bitmap);
-
     }
+
 
 }
