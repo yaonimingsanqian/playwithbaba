@@ -1,5 +1,6 @@
 package papa.play.ksd.baba;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
@@ -7,6 +8,8 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Environment;
+import android.util.DisplayMetrics;
+import android.util.Log;
 import android.util.LruCache;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,6 +31,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.HashSet;
 import java.util.Set;
+
 import papa.play.ksd.baba.DiskLruCache.Snapshot;
 
 /**
@@ -62,6 +66,8 @@ public class PhotoWallAdapter extends ArrayAdapter<String> {
 	 */
 	private int mItemHeight = 0;
 
+    float density;
+
 	public PhotoWallAdapter(Context context, int textViewResourceId, String[] objects,
 			GridView photoWall) {
 		super(context, textViewResourceId, objects);
@@ -89,6 +95,12 @@ public class PhotoWallAdapter extends ArrayAdapter<String> {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+
+        DisplayMetrics metric = new DisplayMetrics();
+        Activity a = (Activity)context;
+        a.getWindowManager().getDefaultDisplay().getMetrics(metric);
+        density = metric.density;  // 屏幕密度（0.75 / 1.0 / 1.5）
+        Log.v("density",density+"");
 	}
 
 	@Override
@@ -108,7 +120,15 @@ public class PhotoWallAdapter extends ArrayAdapter<String> {
 		imageView.setTag(url);
 		//imageView.setImageResource(R.drawable.empty_photo);
 	//	loadBitmaps(imageView, url);
-        imageView.setImageBitmap(PictureUtil.getSmallBitmap(url,100,100));
+        Bitmap b = getBitmapFromMemoryCache(url);
+        if(b == null){
+            Bitmap b2 = PictureUtil.decodeBitmap(url,density);
+            addBitmapToMemoryCache(url,b2);
+            imageView.setImageBitmap(b2);
+        }else {
+            imageView.setImageBitmap(b);
+        }
+
 		return view;
 	}
 
