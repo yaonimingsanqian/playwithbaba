@@ -80,6 +80,10 @@
     <orderEntry type="jdk" jdkName="Android API 20 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="android-support-v4" level="project" />
+    <orderEntry type="library" exported="" name="SMSSDK-1.1.6" level="project" />
+    <orderEntry type="library" exported="" name="armeabi" level="project" />
+    <orderEntry type="library" exported="" name="mips" level="project" />
+    <orderEntry type="library" exported="" name="SMSSDK-1.1.0" level="project" />
   </component>
 </module>
 

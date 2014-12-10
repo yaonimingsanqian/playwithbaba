@@ -3,16 +3,12 @@ package papa.play.ksd.baba;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-
-
-import android.app.Activity;
-import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.Toast;
+
+import cn.smssdk.SMSSDK;
 
 /**
  * @author Adil Soomro
@@ -32,6 +28,9 @@ public class MoreActivity extends Activity {
                 startActivity(new Intent(MoreActivity.this,RegisterActivity.class));
             }
         });
+
+
+
     }
     public void doSearch(View s)
     {

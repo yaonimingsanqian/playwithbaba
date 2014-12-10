@@ -27,6 +27,7 @@
        android:layout_marginLeft="105dip"
        android:layout_marginTop="20dip"
        android:textSize="20dip"
+       android:id="@+id/phone"
        />
     
     <EditText

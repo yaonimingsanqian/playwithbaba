@@ -11,12 +11,22 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.EditText;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import cn.smssdk.EventHandler;
+import cn.smssdk.SMSSDK;
 
 public class RegisterActivity extends Activity {
 
     Button complete;
     Button btnCode;
+    boolean isOk = false;
     BroadcastReceiver broadcastReceiver;
+    MyHandler handler = new MyHandler();
+    EditText phone;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +51,13 @@ public class RegisterActivity extends Activity {
         registerReceiver(broadcastReceiver,new IntentFilter("papa.play.ksd.baba.finish"));
 
         btnCode = (Button)findViewById(R.id.getcode);
+        phone = (EditText)findViewById(R.id.phone);
+        btnCode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SMSSDK.getVerificationCode("86",phone.getText().toString());
+            }
+        });
 
 
     }
@@ -68,5 +85,80 @@ public class RegisterActivity extends Activity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        SMSSDK.registerEventHandler(handler);
+        SMSSDK.getSupportedCountries();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        SMSSDK.unregisterEventHandler(handler);
+    }
+
+    private class MyHandler extends EventHandler {
+        @Override
+        public void onRegister() {
+            super.onRegister();
+        }
+
+        @Override
+        public void beforeEvent(int event, Object data) {
+            super.beforeEvent(event, data);
+        }
+
+        @Override
+        public void afterEvent(int event, int result, Object data) {
+            if (result == SMSSDK.RESULT_COMPLETE) {
+                if (event == SMSSDK.EVENT_GET_SUPPORTED_COUNTRIES) {
+                    // 返回支持发送验证码的国家列表
+                    // ArrayList<HashMap<String, Object>>
+                    ArrayList<HashMap<String, Object>> contries =
+                            (ArrayList<HashMap<String, Object>>) data;
+                    for (HashMap<String, Object> country : contries) {
+                        String zone = (String) country.get("zone");
+                        String rule = (String) country.get("rule");
+
+                        if (zone.equals("86")) {
+                            isOk = true;
+                            break;
+                        }
+                    }
+
+                } else if (event == SMSSDK.EVENT_GET_VERIFICATION_CODE) {
+                    // 请求发送验证码，无返回
+                    // null
+
+                } else if (event == SMSSDK.EVENT_SUBMIT_VERIFICATION_CODE) {
+                    // 校验验证码，返回校验的手机和国家代码
+                    // HashMap<String, Object>
+
+                } else if (event == SMSSDK.EVENT_GET_CONTACTS) {
+                    // 获取手机内部的通信录列表
+                    // ArrayList<HashMap<String, Object>>
+                } else if (event == SMSSDK.EVENT_SUBMIT_USER_INFO) {
+                    // 提交应用内的用户资料
+                    // null
+                } else if (event == SMSSDK.EVENT_GET_FRIENDS_IN_APP) {
+                    // 获取手机通信录在当前应用内的用户列表
+                    // ArrayList<HashMap<String, Object>>
+                } else if (event == SMSSDK.EVENT_GET_NEW_FRIENDS_COUNT) {
+                    // 获取手机通信录在当前应用内的新用户个数
+                    // Integer
+                }
+            } else if (result == SMSSDK.RESULT_ERROR) {
+                ((Throwable) data).printStackTrace();
+            }
+            super.afterEvent(event, result, data);
+        }
+
+        @Override
+        public void onUnregister() {
+            super.onUnregister();
+        }
     }
 }
